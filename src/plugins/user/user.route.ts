@@ -1,9 +1,7 @@
 import { Elysia } from "elysia";
 import { registerUserHandler } from "./user.controller";
-import { userCreateSchema } from "./user.schema";
+import { userCreateHook } from "./user.hook";
 
 export const userRoute = new Elysia({ prefix: "/users" })
-  .get("/", () => "hi")
-  .post("/", registerUserHandler, {
-    body: userCreateSchema,
-  });
+  .get("/", () => "hi", { detail: { tags: ["Users"] } })
+  .post("/", registerUserHandler, userCreateHook);
