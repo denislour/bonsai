@@ -1,7 +1,4 @@
-import {
-  userCreateRequestSchema,
-  userCreateResponseSchema,
-} from "./user.schema";
+import { userCreateRequestSchema } from "./user.schema";
 
 const tags = {
   detail: {

@@ -3,9 +3,11 @@
   "version": "1.0.50",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/app.ts"
+    "dev": "bun run --watch src/app.ts",
+    "debug": "bun run --watch --inspect=ws://localhost:6499/bun src/app.ts"
   },
   "dependencies": {
+    "@elysiajs/jwt": "^0.8.0",
     "@elysiajs/swagger": "^0.8.0",
     "@prisma/client": "5.7.1",
     "elysia": "latest"
