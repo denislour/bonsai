@@ -1,22 +1,21 @@
 import { t, Static } from "elysia";
 
-const userBaseSchema = {
+export const userCreateSchema = t.Object({
   email: t.String({
     format: "email",
     error: "Invalid email!",
-    default: "example@example.com",
   }),
   name: t.Optional(t.String()),
-};
-
-export const userCreateRequestSchema = t.Object({
-  ...userBaseSchema,
   password: t.String({ error: "Invalid password!" }),
 });
 
-export const userCreateResponseSchema = t.Object({
-  id: t.Number({ default: 1 }),
-  ...userBaseSchema,
+export const userLoginSchema = t.Object({
+  email: t.String({
+    format: "email",
+    error: "Invalid email!",
+  }),
+  password: t.String({ error: "Invalid password" }),
 });
 
-export type UserCreateInput = Static<typeof userCreateRequestSchema>;
+export type UserCreateInput = Static<typeof userCreateSchema>;
+export type UserLoginInput = Static<typeof userLoginSchema>;

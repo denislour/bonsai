@@ -7,10 +7,12 @@
     "debug": "bun run --watch --inspect=ws://localhost:6499/bun src/app.ts"
   },
   "dependencies": {
+    "@elysiajs/cookie": "^0.8.0",
     "@elysiajs/jwt": "^0.8.0",
     "@elysiajs/swagger": "^0.8.0",
     "@prisma/client": "5.7.1",
-    "elysia": "latest"
+    "elysia": "latest",
+    "jose": "^5.2.0"
   },
   "devDependencies": {
     "bun-types": "latest",
