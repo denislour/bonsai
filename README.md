@@ -1,24 +1,54 @@
-# README
+# Bonsai - Travel Blog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Bonsai is a project designed to explore the integration of Rails, Svelte, and Inertia.js. It's a travel blog web application that allows users to share their travel experiences and insights.
 
-Things you may want to cover:
+## Project Overview
 
-* Ruby version
+This project serves as a learning platform for:
 
-* System dependencies
+- Ruby on Rails backend
+- Svelte frontend
+- Inertia.js for seamless frontend-backend integration
 
-* Configuration
+## Features
 
-* Database creation
+- Users can create and publish travel blog posts
+- Rich text editing for blog content
+- Responsive design for various devices
 
-* Database initialization
+### Post List View
 
-* How to run the test suite
+![Post List View](/docs/images/blog-list.png)
 
-* Services (job queues, cache servers, search engines, etc.)
+### Post Detail View
 
-* Deployment instructions
+![Post Detail View](/docs/images/tokyo.png)
 
-* ...
+## Technology Stack
+
+- Backend: Ruby on Rails
+- Frontend: Svelte
+- Frontend-Backend Integration: Inertia.js
+- Styling: Tailwind CSS
+
+## Getting Started
+
+(Include instructions for setting up the project locally)
+
+## Contributing
+
+This project is primarily for learning purposes, but contributions and suggestions are welcome!
+
+## License
+
+(Include license information if applicable)
+
+## Acknowledgements
+
+- Rails community
+- Svelte community
+- Inertia.js team
+
+---
+
+Happy coding and happy travels! 🌍✈️
