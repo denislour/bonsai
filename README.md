@@ -1,6 +1,6 @@
 # Bonsai - Travel Blog
 
-Bonsai is a project designed to explore the integration of Rails, Svelte, and Inertia.js. It's a travel blog web application that allows users to share their travel experiences and insights.
+Bonsai is a project designed to explore the integration of `Rails`, `Svelte`, and `Inertia.js`. It's a travel blog web application that allows users to share their travel experiences and insights.
 
 ## Project Overview
 

@@ -5,7 +5,7 @@
   export let posts;
   export let currentPage;
   export let totalPages;
-  export let searchQuery = ""; // Thêm biến này để lưu trữ từ khóa tìm kiếm
+  export let searchQuery = "";
 
   function getRandomAvatarUrl() {
     return `https://picsum.photos/40/40?random=${Math.random()}`;

@@ -6,7 +6,6 @@ class PostsController < ApplicationController
 
     all_posts = generate_all_posts
 
-    # Lọc bài viết theo từ khóa tìm kiếm
     if search_query.present?
       all_posts = all_posts.select { |post| post[:title].downcase.include?(search_query.downcase) }
     end
@@ -38,7 +37,6 @@ class PostsController < ApplicationController
   private
 
   def find_post(id)
-    # Giả lập việc tìm bài viết. Trong thực tế, bạn sẽ truy vấn từ cơ sở dữ liệu
     all_posts = generate_all_posts
     all_posts.find { |p| p[:id].to_s == id.to_s }
   end
