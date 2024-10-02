@@ -1,5 +1,5 @@
 puts "Cleaning database..."
-[ Comment, Post, Author, Tag ].each(&:destroy_all)
+[Comment, Post, Author, Tag].each(&:destroy_all)
 
 puts "Creating authors..."
 authors = [
@@ -18,7 +18,7 @@ posts_data = [
     content: "<p>Việt Nam, một đất nước với lịch sử lâu đời và văn hóa phong phú...</p>",
     author: authors[0],
     date: Date.new(2023, 8, 15),
-    tag_names: [ "Du lịch", "Văn hóa", "Việt Nam" ]
+    tag_names: ["Du lịch", "Văn hóa", "Việt Nam"]
   },
   {
     title: "Khám phá Kyoto - Linh hồn của Nhật Bản",
@@ -26,7 +26,7 @@ posts_data = [
     content: "<p>Kyoto, cố đô của Nhật Bản trong hơn một nghìn năm...</p>",
     author: authors[1],
     date: Date.new(2023, 8, 20),
-    tag_names: [ "Du lịch", "Văn hóa", "Nhật Bản", "Kyoto" ]
+    tag_names: ["Du lịch", "Văn hóa", "Nhật Bản", "Kyoto"]
   }
 ]
 

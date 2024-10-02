@@ -11,13 +11,12 @@
 
       <div class="flex items-center space-x-4 mb-6">
         <img
-          src={post.authorAvatar ||
-            `https://picsum.photos/40/40?random=${Math.random()}`}
-          alt={post.author}
+          src={post.author.avatar}
+          alt={post.author.name}
           class="w-10 h-10 rounded-full"
         />
         <div>
-          <p class="font-semibold">{post.author}</p>
+          <p class="font-semibold">{post.author.name}</p>
           <p class="text-sm text-gray-500">{post.date}</p>
         </div>
       </div>
@@ -37,7 +36,7 @@
           <span
             class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm"
           >
-            {tag}
+            {tag.name}
           </span>
         {/each}
       </div>
@@ -69,12 +68,11 @@
           <div class="bg-gray-50 p-4 rounded-lg mb-4">
             <div class="flex items-center space-x-2 mb-2">
               <img
-                src={comment.authorAvatar ||
-                  `https://picsum.photos/30/30?random=${Math.random()}`}
-                alt={comment.author}
+                src={comment.author.avatar}
+                alt={comment.author.name}
                 class="w-8 h-8 rounded-full"
               />
-              <span class="font-semibold">{comment.author}</span>
+              <span class="font-semibold">{comment.author.name}</span>
               <span class="text-sm text-gray-500">{comment.date}</span>
             </div>
             <p>{comment.content}</p>
