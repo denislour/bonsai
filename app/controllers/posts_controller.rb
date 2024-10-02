@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     all_posts = PostService.all_posts
 
     if search_query.present?
-      all_posts = all_posts.where("title ILIKE ?", "%#{search_query}%")
+      all_posts = all_posts.where("LOWER(title) LIKE ?", "%#{search_query.downcase}%")
     end
 
     total_pages = (all_posts.count.to_f / ITEMS_PER_PAGE).ceil

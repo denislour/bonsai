@@ -1,6 +1,4 @@
 <script>
-  import { Facebook, Twitter, Linkedin, MessageCircle } from "lucide-svelte";
-
   export let post;
 </script>
 
@@ -39,27 +37,6 @@
             {tag.name}
           </span>
         {/each}
-      </div>
-
-      <div class="flex space-x-4 mb-8">
-        <button
-          class="flex items-center space-x-2 text-blue-600 hover:text-blue-800"
-        >
-          <Facebook size={20} />
-          <span>Share</span>
-        </button>
-        <button
-          class="flex items-center space-x-2 text-blue-400 hover:text-blue-600"
-        >
-          <Twitter size={20} />
-          <span>Tweet</span>
-        </button>
-        <button
-          class="flex items-center space-x-2 text-blue-700 hover:text-blue-900"
-        >
-          <Linkedin size={20} />
-          <span>Share</span>
-        </button>
       </div>
 
       <div class="border-t border-gray-200 pt-8">

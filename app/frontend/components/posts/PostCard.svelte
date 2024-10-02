@@ -1,6 +1,7 @@
 <script>
+  import { goToPostDetail } from "../../stores/postStore";
+
   export let post;
-  export let onReadMore;
 </script>
 
 <div class="bg-white rounded-lg shadow-md overflow-hidden">
@@ -30,7 +31,7 @@
     </div>
     <button
       class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300"
-      on:click={() => onReadMore(post.id)}
+      on:click={() => goToPostDetail(post.id)}
     >
       Đọc thêm
     </button>
