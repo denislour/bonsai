@@ -3,6 +3,10 @@ Rails.application.routes.draw do
     namespace :v1 do
       resource :session, only: %i[create destroy]
       resource :current_user, only: :show
+
+      resources :posts, only: %i[index show create update destroy] do
+        resources :comments, only: :create
+      end
     end
   end
 
