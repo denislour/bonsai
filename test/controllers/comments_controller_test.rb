@@ -31,4 +31,16 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :not_found
   end
+
+  test "create records a paper_trail version with whodunnit" do
+    sign_in_as(@user)
+
+    assert_changes -> { PaperTrail::Version.count } do
+      post api_v1_post_comments_path(@post), params: { body: "Audited" }, as: :json
+    end
+
+    version = PaperTrail::Version.last
+    assert_equal "Comment", version.item_type
+    assert_equal @user.id.to_s, version.whodunnit
+  end
 end

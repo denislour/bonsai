@@ -29,6 +29,13 @@ module Bonsai
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
+    # PaperTrail YAML safe_load cần các class này để đọc object_changes
+    # (timestamps lưu dạng ActiveSupport::TimeWithZone trong YAML).
+    config.active_record.yaml_column_permitted_classes = [
+      Symbol, Date, Time, ActiveSupport::TimeWithZone, ActiveSupport::TimeZone
+    ]
+
+
     config.middleware.use ActionDispatch::Cookies
   end
 end

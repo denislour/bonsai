@@ -7,6 +7,9 @@ Rails.application.routes.draw do
       resources :posts, only: %i[index show create update destroy] do
         resources :comments, only: :create
       end
+
+      get "audit/versions", to: "audit#versions"
+      get "audit/stats", to: "audit#stats"
     end
   end
 

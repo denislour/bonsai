@@ -22,6 +22,9 @@ module Api
 
           raise UnauthorizedError unless @session
 
+          # Gán whodunnit cho PaperTrail — mọi request protected đều đi qua đây.
+          PaperTrail.request.whodunnit = @session.user_id.to_s
+
           @session
         end
 

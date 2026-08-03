@@ -83,4 +83,28 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
     assert_response :not_found
   end
+  test "create records a paper_trail version with whodunnit" do
+    sign_in_as(@user)
+
+    assert_changes -> { PaperTrail::Version.count } do
+      post api_v1_posts_path, params: { title: "Versioned", body: "Body" }, as: :json
+    end
+
+    version = PaperTrail::Version.last
+    assert_equal "Post", version.item_type
+    assert_equal "create", version.event
+    assert_equal @user.id.to_s, version.whodunnit
+  end
+
+  test "update records changed attributes in version" do
+    sign_in_as(@user)
+    post = Post.create!(title: "Old", body: "Body", user: @user)
+
+    patch api_v1_post_path(post), params: { title: "New", body: "Body" }, as: :json
+
+    version = post.versions.last
+    assert_equal "update", version.event
+    assert_equal %w[Old New], version.changeset["title"]
+    assert_equal @user.id.to_s, version.whodunnit
+  end
 end

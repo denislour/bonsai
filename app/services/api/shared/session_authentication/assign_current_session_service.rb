@@ -13,6 +13,10 @@ module Api
 
         def execute
           Current.session = @session
+
+          # Gán whodunnit cho PaperTrail — ai đang thực hiện thay đổi.
+          # session có → user_id của session; nil (logout) → nil.
+          PaperTrail.request.whodunnit = @session&.user_id&.to_s
         end
       end
     end
